@@ -18,7 +18,8 @@ function drawGrid(gridSize) {
       newSquare.style['width'] = `${squareSize}px`;
       newSquare.style['height'] = `${squareSize}px`;
       newSquare.addEventListener('mouseenter', (event) => {
-        newSquare.style["backgroundColor"] = 'red';
+        //newSquare.style["backgroundColor"] = 'red';
+        newSquare.style["backgroundColor"] = randomColor();
       });
       newRow.appendChild(newSquare);      
     }
@@ -36,4 +37,11 @@ function resizeGrid() {
   }
   squareSize = gridPixelSize / gridSize;
   drawGrid(gridSize);
+}
+
+function randomColor() {
+  let red = Math.floor(Math.random() * 256);
+  let green = Math.floor(Math.random() * 256);
+  let blue = Math.floor(Math.random() * 256);
+  return `rgb(${red}, ${green}, ${blue})`;
 }
