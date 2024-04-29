@@ -26,19 +26,14 @@ function drawGrid(gridSize) {
   }
 }
 
-buttons.addEventListener('click', (event) => {  
-  let target = event.target;
-  switch(target.id) {
-    case 'resizeButton':
-      while (gridContainer.firstChild) {
-        gridContainer.removeChild(gridContainer.lastChild);
-      }
-      gridSize = 0;
-      while (gridSize <= 0 || gridSize > 100 || isNaN(gridSize)) {
-        gridSize = parseInt(prompt('Set grid size (1 to 100)'));
-      }
-      squareSize = gridPixelSize / gridSize;
-      drawGrid(gridSize);
-      break;
+function resizeGrid() {
+  while (gridContainer.firstChild) {
+    gridContainer.removeChild(gridContainer.lastChild);
   }
-});
+  gridSize = 0;
+  while (gridSize <= 0 || gridSize > 100 || isNaN(gridSize)) {
+    gridSize = parseInt(prompt('Set grid size (1 to 100)'));
+  }
+  squareSize = gridPixelSize / gridSize;
+  drawGrid(gridSize);
+}
