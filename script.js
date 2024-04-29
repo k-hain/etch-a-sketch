@@ -5,9 +5,9 @@ let gridSize = 16;
 let gridPixelSize = 640;
 let squareSize = 0;
 
-drawGrid(gridSize);
+drawGrid();
 
-function drawGrid(gridSize) {
+function drawGrid() {
   squareSize = gridPixelSize / gridSize;
   gridContainer.style['width'] = `${gridPixelSize}px`;
   for (let i = 0; i < gridSize; i++) {
@@ -39,12 +39,12 @@ function resizeGrid() {
   while (gridSize <= 0 || gridSize > 100 || isNaN(gridSize)) {
     gridSize = parseInt(prompt('Set grid size (1 to 100)'));
   }
-  drawGrid(gridSize);
+  drawGrid();
 }
 
 function clearGrid() {
   deleteGrid();
-  drawGrid(gridSize);
+  drawGrid();
 }
 
 function randomColor() {
