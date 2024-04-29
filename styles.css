@@ -8,7 +8,7 @@ html {
   box-sizing: inherit;
 }
 
-.buttonContainer {
+#buttonContainer {
   display: flex;
   justify-content: center;
   margin: 1rem auto 1rem;
@@ -22,17 +22,15 @@ html {
   display: flex;
   margin: 0 auto;
   flex-direction: column;
+  gap: 0;
 }
 
 .gridRow {
   display: flex;
+  gap: 0;
 }
 
 .square {
   display: flex;
-  flex-grow: 1;
-  background-color: rgb(143, 180, 202);
-  border-style: solid;
-  border-width: 4px;
-  border-color: white;
+  background-color: rgb(151, 193, 212);
 }

@@ -1,4 +1,5 @@
 const gridContainer = document.getElementById('gridContainer');
+const buttons = document.querySelector('#buttonContainer');
 
 let gridSize = 16;
 let gridPixelSize = 640;
@@ -32,3 +33,26 @@ function drawGrid(gridSize) {
 }
 
 drawGrid(gridSize);
+
+buttons.addEventListener('click', (event) => {
+  
+  let target = event.target;
+
+  switch(target.id) {
+    case 'resizeButton':
+      while (gridContainer.firstChild) {
+        gridContainer.removeChild(gridContainer.lastChild);
+      }
+
+      gridSize = 0;
+      while (gridSize <= 0 || gridSize > 100 || isNaN(gridSize)) {
+        gridSize = parseInt(prompt('Set grid size (1 to 100)'));
+      }
+
+      squareSize = gridPixelSize / gridSize;
+      drawGrid(gridSize);
+
+      break;
+  }
+
+});
