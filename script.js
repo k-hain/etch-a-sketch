@@ -3,11 +3,12 @@ const buttons = document.querySelector('#buttonContainer');
 
 let gridSize = 16;
 let gridPixelSize = 640;
-let squareSize = gridPixelSize / gridSize;
+let squareSize = 0;
 
 drawGrid(gridSize);
 
-function drawGrid(gridSize) {  
+function drawGrid(gridSize) {
+  squareSize = gridPixelSize / gridSize;
   gridContainer.style['width'] = `${gridPixelSize}px`;
   for (let i = 0; i < gridSize; i++) {
     const newRow = document.createElement('div');
@@ -18,7 +19,6 @@ function drawGrid(gridSize) {
       newSquare.style['width'] = `${squareSize}px`;
       newSquare.style['height'] = `${squareSize}px`;
       newSquare.addEventListener('mouseenter', (event) => {
-        //newSquare.style["backgroundColor"] = 'red';
         newSquare.style["backgroundColor"] = randomColor();
       });
       newRow.appendChild(newSquare);      
@@ -27,15 +27,23 @@ function drawGrid(gridSize) {
   }
 }
 
-function resizeGrid() {
+function deleteGrid() {
   while (gridContainer.firstChild) {
     gridContainer.removeChild(gridContainer.lastChild);
   }
+}
+
+function resizeGrid() {
+  deleteGrid();
   gridSize = 0;
   while (gridSize <= 0 || gridSize > 100 || isNaN(gridSize)) {
     gridSize = parseInt(prompt('Set grid size (1 to 100)'));
   }
-  squareSize = gridPixelSize / gridSize;
+  drawGrid(gridSize);
+}
+
+function clearGrid() {
+  deleteGrid();
   drawGrid(gridSize);
 }
 

@@ -12,6 +12,7 @@ html {
   display: flex;
   justify-content: center;
   margin: 1rem auto 1rem;
+  gap: 1rem;
 }
 
 .button {
