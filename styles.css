@@ -10,8 +10,12 @@ html {
 
 #gridContainer {
   display: flex;
-  width: 1024px;
-  margin: 0 auto auto;
+  margin: 0 auto;
+}
+
+.gridRow {
+  display: flex;
+  flex-direction: column;
 }
 
 .square {
