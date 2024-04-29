@@ -11,11 +11,11 @@ html {
 #gridContainer {
   display: flex;
   margin: 0 auto;
+  flex-direction: column;
 }
 
 .gridRow {
   display: flex;
-  flex-direction: column;
 }
 
 .square {
