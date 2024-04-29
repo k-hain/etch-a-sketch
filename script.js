@@ -6,9 +6,7 @@ let squareSize = gridPixelSize / gridSize;
 
 function drawGrid(gridSize) {
   
-  gridContainer.setAttribute('style', `
-    width: ${gridPixelSize}px;
-  `)
+  gridContainer.style['width'] = `${gridPixelSize}px`;
 
   for (let i = 0; i < gridSize; i++) {
 

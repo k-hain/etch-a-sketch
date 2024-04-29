@@ -8,6 +8,16 @@ html {
   box-sizing: inherit;
 }
 
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto 1rem;
+}
+
+.button {
+  font-size: 1.25rem;
+}
+
 #gridContainer {
   display: flex;
   margin: 0 auto;
