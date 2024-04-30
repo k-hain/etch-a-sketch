@@ -11,9 +11,15 @@
   </head>
 
   <body>
-    <div id="buttonContainer">
-      <button id="resizeButton" class="button" onclick="resizeGrid()">Resize Grid</button>
-      <button id="clearButton" class="button" onclick="clearGrid()">Clear</button>
+    <div class="buttonContainer">
+      <h2>Options</h2>
+      <button class="button" onclick="resizeGrid()">Resize Grid</button>
+      <button class="button" onclick="clearGrid()">Clear</button>
+    </div>
+    <div class="buttonContainer">
+      <h2>Style</h2>
+      <button class="button" id="rainbowBtn" onclick="changeStyle('rainbow')">Rainbow</button>
+      <button class="button" id="sketchBtn" onclick="changeStyle('sketch')">Sketch</button>
     </div>
     <div id="gridContainer"></div>
   </body>
